@@ -1,0 +1,9 @@
+prac\Scripts\activate
+python -m venv prac
+pip install Django
+django-admin startproject ap_prac #Create a Django Project
+python manage.py startapp library #Create a Django App
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser(rex ,rex@gmail.com, @rex) /admin
+python manage.py runserver

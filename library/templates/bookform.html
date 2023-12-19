@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block content %}
+<div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+        <div class="card border-primary mb-3">
+            <div class="card-header">Add Book</div>
+            <div class="card-body">
+                <form action method="POST">
+                    {% csrf_token %} {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

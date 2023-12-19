@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block content %}
+<div class="row">
+    <div class="col-md">
+        <div class="row">
+            <div class="col-auto">
+                <h5>Books</h5>
+            </div>
+            <div class="col-auto">
+                <a
+                    class="btn btn-primary btn-sm btn-block"
+                    href="{% url 'create_book' %}">Add Book</a>
+            </div>
+
+            <div class="card border-warning mb-3">
+                <div class="card-body text-warning">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="table-dark">
+                                <th>Book Title</th>
+                                <th>Author</th>
+                                <th>Genre</th>
+                                <th>ISBN</th>
+                                <th>Available</th>
+                            </tr>
+                            {% for book in books %}
+                            <tr>
+                                <td>{{ book.title }}</td>
+                                <td>{{ book.author }}</td>
+                                <td>{{ book.genre }}</td>
+                                <td>{{ book.isbn }}</td>
+                                <td>{{ book.available }}</td>
+                            </tr>
+                            {% endfor %}
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</div>
